@@ -4,7 +4,7 @@
     <title>Untitled</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
-      
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">  
   </head>
   <body>
     <script>
@@ -13,7 +13,7 @@
       let circleSize = 50; //Diameter of circle
       let myFont;
       
-      function setup() {
+      async function setup() {
         createCanvas(800, 600); //canvas 800w by 880h
         background(100, 25, 69); // light grey
         background("#F2B1B7");
@@ -57,9 +57,15 @@
         stroke(245, 123, 93);
         strokeWeight(5);
         textFont(myFont);
-        textStyle(BOLDITALIC);
+        //textStyle(BOLDITALIC);
         textAlign(CENTER, TOP);
         text(str, 500, 450);
+        let des = textDescent();
+        stroke('red');
+        line(500, 400, 500 + des, 450);
+        textWeight(100);
+        textLeading(90);
+        text("cen\nter", 500, 480);
       }
       
     </script>
