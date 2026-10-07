@@ -4,23 +4,35 @@
     <title>Untitled</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
+      
   </head>
   <body>
     <script>
       let circleX = 200;
-      let circleY = 200;
+      let circleY = 500;
       let circleSize = 50; //Diameter of circle
+      let myFont;
       
       function setup() {
         createCanvas(800, 600); //canvas 800w by 880h
         background(100, 25, 69); // light grey
         background("#F2B1B7");
-        colorMode(HSL, 100, 75, 0);
+        let from = color(218, 165, 32);
+        let to = color(72, 61, 139);
+        let interA = lerpColor(from, to, 0.33);
+        let interB = lerpColor(from, to , 0.66);
+        fill(interA);
+        ellipse(circleX, circleY, circleSize);
+        myFont = await
+        loadFont('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+        //colorMode(HSL, 100, 75, 69);
       }
       function draw() {
         //x, y, width, height
         //ellipse(300, 200, 500, 700);
-        //ellipse(circleX, circleY, circleSize);'
+        let str = "lol";
+        fill(212, 176, 247);
+        strokeWeight(9);
         circle(200, 200, 50);
         strokeWeight(2);
         stroke('yellow');
@@ -41,6 +53,13 @@
         vertex(625, 754);
         vertex(300, 205);
         endShape(CLOSE);
+        textSize(45);
+        stroke(245, 123, 93);
+        strokeWeight(5);
+        textFont(myFont);
+        textStyle(BOLDITALIC);
+        textAlign(CENTER, TOP);
+        text(str, 500, 450);
       }
       
     </script>
